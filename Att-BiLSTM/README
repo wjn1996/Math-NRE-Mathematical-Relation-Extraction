@@ -1,0 +1,13 @@
+数据集：data目录
+re_50_k_j_train_data:表示实体间距最大为50，间距最小为k，padding为j
+k取值为0 5 10 15 20；j取值为0 2 4 6 8
+训练：
+python3 train.py --embedding_type=word2vec --train_path=./data/junior_math/re_50_0_0_train_data --gpu=0
+embedding_type可取空（random）、word2vec、glove和gwe 
+train_path为训练的数据集路径
+gpu：指定gpu
+测试：
+python3 eval.py --test_path "data/junior_math/re_50_0_0_test_data" --checkpoint_dir "runs/1551410876/checkpoints" --model_dir "runs/1551410876/"
+test_path：测试集路径
+checkpoint_dir：checkpoint路径
+model_dir：模型保存路径
